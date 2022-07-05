@@ -1,0 +1,133 @@
+BEGIN
+	DECLARE
+		sku_id INT DEFAULT 110001;
+
+
+WHILE sku_id < 1000000 DO
+	INSERT INTO `micromall`.`pms_product` (
+		`brand_id`,
+		`product_category_id`,
+		`feight_template_id`,
+		`product_attribute_category_id`,
+		`name`,
+		`pic`,
+		`product_sn`,
+		`delete_status`,
+		`publish_status`,
+		`new_status`,
+		`recommand_status`,
+		`verify_status`,
+		`sort`,
+		`sale`,
+		`price`,
+		`promotion_price`,
+		`gift_growth`,
+		`gift_point`,
+		`use_point_limit`,
+		`sub_title`,
+		`description`,
+		`original_price`,
+		`stock`,
+		`low_stock`,
+		`unit`,
+		`weight`,
+		`preview_status`,
+		`service_ids`,
+		`keywords`,
+		`note`,
+		`album_pics`,
+		`detail_title`,
+		`detail_desc`,
+		`detail_html`,
+		`detail_mobile_html`,
+		`promotion_start_time`,
+		`promotion_end_time`,
+		`promotion_per_limit`,
+		`promotion_type`,
+		`brand_name`,
+		`product_category_name`
+	)
+VALUES
+	(
+		'58',
+		'29',
+		'0',
+		'1',
+		'耐克NIKE 男子 气垫 休闲鞋 AIR MAX 90 ESSENTIAL 运动鞋 AJ1285-101白色41码',
+		'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5b19403eN9f0b3cb8.jpg',
+		'6799345',
+		'0',
+		'1',
+		'1',
+		'1',
+		'0',
+		'0',
+		'0',
+		'499.00',
+		NULL,
+		'0',
+		'0',
+		'0',
+		'耐克NIKE 男子 气垫 休闲鞋 AIR MAX 90 ESSENTIAL 运动鞋 AJ1285-101白色41码',
+		'',
+		'499.00',
+		'100',
+		'0',
+		'',
+		'0.00',
+		'0',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		'',
+		NULL,
+		NULL,
+		'0',
+		'0',
+		'NIKE',
+		'男鞋'
+	);
+
+INSERT INTO `micromall`.`pms_sku_stock` (
+	`product_id`,
+	`sku_code`,
+	`price`,
+	`stock`,
+	`lock_stock`,
+	`low_stock`,
+	`sp1`,
+	`sp2`,
+	`sp3`,
+	`pic`,
+	`sale`,
+	`promotion_price`
+)
+VALUES
+	(
+		sku_id,
+		sku_id,
+		'3000.00',
+		'100000000',
+		'10',
+		'5',
+		'黑色',
+		'16g',
+		NULL,
+		NULL,
+		'0',
+		NULL
+	);
+
+
+SET sku_id = sku_id + 1;
+
+
+END
+WHILE;
+
+
+END
